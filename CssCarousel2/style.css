@@ -1,30 +1,52 @@
+
+/* 기초 세팅 */
 html, body {
     margin: 0px;
 }
 
+/* 전체 캐러셀 영역 */
 .carousel {
+    /* 위치를 상대적으로 배치 */
     position: relative;
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-    margin-top: 26px;
+    /* 마진 값 */
+    margin-top: 100px;
 }
 
+/* 캐러셀 이미지 슬라이드 영역 */
 .carousel-inner {
+    /* 위치를 상대적으로 배치 */
     position: relative;
+    /* 스크롤바 숨기기 */
     overflow: hidden;
+    /* 가로 값 최대 */
     width: 100%;
 }
 
+/* 캐러셀 영역에서 input요소를 체크하면 
+그 안에 carousel-item 클래스를 가진 요소에
+스타일 적용함.  */
 .carousel-open:checked + .carousel-item {
+    /* position: static;: 이 부분은 .carousel-item 클래스를 가진
+     요소의 위치(position)를 static으로 설정합니다. 
+     static 위치는 요소를 문서의 기본 흐름에 따라 배치하는 것을 의미합니다.
+      이 스타일 규칙을 통해 선택된 
+    .carousel-item 요소는 다른 위치 조정 없이 원래 위치에 나타납니다. */
     position: static;
+    /* 이거 넣어야 애니메이션 넘어갈 때 다음 화면이 그대로 보임 */
     opacity: 100;
 }
 
+/* 캐러셀 영역 이미지부분 */
 .carousel-item {
+    /* 위치를 상대적으로 배치 */
     position: absolute;
+    /* 초기상태에서 carousel-item은 보이지 않는다 */
     opacity: 0;
+    /* 몰라tlqkf */
     -webkit-transition: opacity 0.6s ease-out;
     transition: opacity 0.6s ease-out;
 }
+
 
 .carousel-item img {
     display: block;
@@ -61,7 +83,7 @@ html, body {
 
 .carousel-control:hover {
     background: rgba(0, 0, 0, 0.8);
-    color: #aaaaaa;
+    color: red;
 }
 
 #carousel-1:checked ~ .control-1,
@@ -93,8 +115,6 @@ html, body {
     display: block;
     font-size: 35px;
 }
-
-
 
 #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
 #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
