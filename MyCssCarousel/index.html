@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ineex.js"></script>
+
+</head>
+<body>
+    <div class="slider">
+        <!-- 버튼영역 -->
+        <a href="#slide1">1</a>
+        <a href="#slide2">2</a>
+        <a href="#slide3">3</a>
+        <!-- 캐러셀영역 -->
+        <div class="slides">
+            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked="checked">
+            <div id="slide1">
+            1
+            </div>
+            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true">
+            <div id="slide2">
+            2
+            </div>
+            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true">
+            <div id="slide3">
+            3
+            </div>
+            <label for="carousel-3" class="carousel-control prev control-1">prev</label>
+            <label for="carousel-2" class="carousel-control next control-1">next</label>
+            <label for="carousel-1" class="carousel-control prev control-2">prev</label>
+            <label for="carousel-3" class="carousel-control next control-2">next</label>
+            <label for="carousel-2" class="carousel-control prev control-3">prev</label>
+            <label for="carousel-1" class="carousel-control next control-3">next</label>
+        </div>
+    </div>
+</body>
+</html>

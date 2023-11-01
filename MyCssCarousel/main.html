@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ineex.js"></script>
+
+</head>
+<body>
+    <div class="slider">
+        <!-- 버튼영역 -->
+        <a href="#slide1">1</a>
+        <a href="#slide2">2</a>
+        <a href="#slide3">3</a>
+        <!-- 캐러셀영역 -->
+        <div class="slides">
+            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked="checked">
+            <div id="slide1">
+            1
+            </div>
+            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true">
+            <div id="slide2">
+            2
+            </div>
+            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true">
+            <div id="slide3">
+            3
+            </div>
+            <label for="carousel-3" class="carousel-control prev control-1">prev</label>
+            <label for="carousel-2" class="carousel-control next control-1">next</label>
+            <label for="carousel-1" class="carousel-control prev control-2">prev</label>
+            <label for="carousel-3" class="carousel-control next control-2">next</label>
+            <label for="carousel-2" class="carousel-control prev control-3">prev</label>
+            <label for="carousel-1" class="carousel-control next control-3">next</label>
+        </div>
+    </div>
+
+    <style>
+        * {
+    box-sizing: border-box;
+}
+  
+html, body {
+    height: 100%; 
+    overflow: hidden; 
+} 
+body {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #74ABE2, #5563DE); 
+}
+  
+.slider {
+    width: 300px; 
+    text-align: center;
+    overflow: hidden;
+}
+  
+.slider > a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: black;
+    color: aliceblue;
+    font-weight: 800;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+}
+
+  
+.slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+  
+.slides::-webkit-scrollbar {
+    height: 10px;
+}
+  
+.slides::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+  
+.slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: midnightblue;
+    margin-right: 10px;
+}
+
+.carousel-open{
+    overflow: hidden;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-control {
+    width: 40px;
+    height: 40px;
+    background: black;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 15px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 500px;
+}
+.carousel-control.next {
+    right: 500px;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: red;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+  
+    </style>
+
+</body>
+</html>
